@@ -1,7 +1,9 @@
-import Image from 'next/image'
-import React from 'react'
+'use client'
 
-export default function discoverExclusive() {
+import React, { useRef } from 'react';
+import Image from 'next/image';
+
+export default function DiscoverExclusive() {
     const ItemData = [
         { id: 0, text: "0-9" },
         { id: 1, text: "A" },
@@ -29,17 +31,8 @@ export default function discoverExclusive() {
         { id: 24, text: "W" },
         { id: 25, text: "X" },
         { id: 26, text: "Y" },
-        { id: 27, text: "O" },
-        { id: 28, text: "h" },
-        { id: 29, text: "U" },
-        { id: 30, text: "h" },
-        { id: 31, text: "I" },
-        { id: 32, text: "S" },
-        { id: 33, text: "L" },
-        { id: 34, text: "A" },
-        { id: 35, text: "N" },
-        { id: 36, text: "D" },
-    ]
+        { id: 27, text: "Z" }
+    ];
 
     const ShopData = [
         { id: 0, img: '/assets/images/apc.png', text: 'APC' },
@@ -48,17 +41,25 @@ export default function discoverExclusive() {
         { id: 3, img: '/assets/images/ay.png', text: 'About you' },
         { id: 4, img: '/assets/images/acer.webp', text: 'Acer' },
         { id: 5, img: '/assets/images/acne.jpg', text: 'Acne Studio' },
-        { id: 5, img: '/assets/images/aco.png', text: 'ACO' },
-        { id: 5, img: '/assets/images/addnature.png', text: 'Addnature' },
-        { id: 5, img: '/assets/images/adelberg.jpg', text: 'Adelberg' },
-        { id: 5, img: '/assets/images/adidas.jpg', text: 'Adidas' },
-        { id: 5, img: '/assets/images/adoore.jpg', text: 'Adore' },
-        { id: 5, img: '/assets/images/afound.png', text: 'Afound' },
-        { id: 5, img: '/assets/images/aco.png', text: 'ACO' },
-        { id: 5, img: '/assets/images/aliexpress.jpg', text: 'AliExpress' },
-        { id: 5, img: '/assets/images/alessi.jpg', text: 'Alessi' },
-        { id: 5, img: '/assets/images/alcon.png', text: 'Alcon' },
-    ]
+        { id: 6, img: '/assets/images/aco.png', text: 'ACO' },
+        { id: 7, img: '/assets/images/addnature.png', text: 'Addnature' },
+        { id: 8, img: '/assets/images/adelberg.jpg', text: 'Adelberg' },
+        { id: 9, img: '/assets/images/adidas.jpg', text: 'Adidas' },
+        { id: 10, img: '/assets/images/adoore.jpg', text: 'Adore' },
+        { id: 11, img: '/assets/images/afound.png', text: 'Afound' },
+        { id: 12, img: '/assets/images/aliexpress.jpg', text: 'AliExpress' },
+        { id: 13, img: '/assets/images/alessi.jpg', text: 'Alessi' },
+        { id: 14, img: '/assets/images/alcon.png', text: 'Alcon' },
+    ];
+
+    const refs = ItemData.reduce((acc, value) => {
+        acc[value.text] = useRef();
+        return acc;
+    }, {});
+
+    const scrollToSection = (section) => {
+        refs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <>
@@ -68,15 +69,21 @@ export default function discoverExclusive() {
                 </div>
                 <section className='border-b-2 border-gray-200 pb-4'>
                     <div className='flex flex-col gap-8'>
-                        <h3 className='text-4xl font-semibold text-gray-800 leading-[50px]'>Discover exclusive offers from popular brands! <br /> Shop smart, save big!</h3>
+                        <h3 className='text-4xl font-semibold text-gray-800 leading-[50px]'>
+                            Discover exclusive offers from popular brands! <br /> Shop smart, save big!
+                        </h3>
                         <div className='flex items-center gap-3 '>
                             <p className='text-gray-900 font-semibold text-xl'>Go directly to:</p>
                             {ItemData.map((e, i) => (
-                                <div className='flex items-center gap-2' key={i} >
-                                    <p className='text-gray-800 font-semibold text-lg cursor-pointer hover:text-blue-600'>{e.text}</p>
+                                <div className='flex items-center gap-2' key={i}>
+                                    <p 
+                                        className='text-gray-800 font-semibold text-lg cursor-pointer hover:text-blue-600'
+                                        onClick={() => scrollToSection(e.text)}
+                                    >
+                                        {e.text}
+                                    </p>
                                 </div>
                             ))}
-
                         </div>
                         <div className='flex items-center gap-4'>
                             <p className='text-gray-900 font-semibold text-xl'>Sort by:</p>
@@ -90,69 +97,21 @@ export default function discoverExclusive() {
                 </section>
 
                 <section className='space-y-4'>
-
-                    <div className='border-b-2 border-gray-200 mt-6'>
-                        <h2 className='text-4xl text-gray-500 font-semibold'>A</h2>
-                        <div className='grid grid-cols-3 gap-4 w-full justify-center'>
-                            {ShopData.map((item, index) => (
-                                <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
-                                    <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
-                                    <h3 className='text-gray-800 font-semibold text-lg'>{item.text}</h3>
-                                </div>
-                            ))}
+                    {ItemData.map((e, i) => (
+                        <div key={i} ref={refs[e.text]} className='border-b-2 border-gray-200 mt-6'>
+                            <h2 className='text-4xl text-gray-500 font-semibold'>{e.text}</h2>
+                            <div className='grid grid-cols-3 gap-4 w-full justify-center'>
+                                {ShopData.map((item, index) => (
+                                    <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
+                                        <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
+                                        <h3 className='text-gray-800 font-semibold text-lg'>{item.text}</h3>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-
-                    <div className='border-b-2 border-gray-200 mt-6'>
-                        <h2 className='text-4xl text-gray-500 font-semibold'>A</h2>
-                        <div className='grid grid-cols-3 gap-4 w-full justify-center'>
-                            {ShopData.map((item, index) => (
-                                <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
-                                    <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
-                                    <h3 className='text-gray-800 font-semibold text-lg'>{item.text}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className='border-b-2 border-gray-200 mt-6'>
-                        <h2 className='text-4xl text-gray-500 font-semibold'>A</h2>
-                        <div className='grid grid-cols-3 gap-4 w-full justify-center'>
-                            {ShopData.map((item, index) => (
-                                <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
-                                    <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
-                                    <h3 className='text-gray-800 font-semibold text-lg'>{item.text}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className='border-b-2 border-gray-200 mt-6'>
-                        <h2 className='text-4xl text-gray-500 font-semibold'>A</h2>
-                        <div className='grid grid-cols-3 gap-4 w-full justify-center'>
-                            {ShopData.map((item, index) => (
-                                <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
-                                    <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
-                                    <h3 className='text-gray-800 font-semibold text-lg'>{item.text}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className='border-b-2 border-gray-200 mt-6'>
-                        <h2 className='text-4xl text-gray-500 font-semibold'>A</h2>
-                        <div className='grid grid-cols-3 gap-4 w-full justify-center'>
-                            {ShopData.map((item, index) => (
-                                <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
-                                    <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
-                                    <h3 className='text-gray-800 font-semibold text-lg'>{item.text}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
+                    ))}
                 </section>
             </main>
         </>
-    )
+    );
 }
