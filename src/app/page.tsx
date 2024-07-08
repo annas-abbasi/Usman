@@ -3,7 +3,7 @@
 // import Sidebar from "@/components/sidebar/sidebar";
 import BlogPage from "@/components/blogspage/blogsPage";
 import SubBlogPage from "@/components/subBlogPage/SubBlogPage";
-import DiscoverExclusive from "@/components/discoverexclusive/discoverExclusive";
+import DiscoverShop from "@/components/discovershop/discoverShop";
 import dynamic from "next/dynamic";
 
 const CustomSlider = dynamic(
@@ -18,7 +18,7 @@ export default function Home() {
       {/* <Responsive_profile_name /> */}
       {/* <BlogPage /> */}
       {/* <SubBlogPage /> */}
-      <DiscoverExclusive />
+      <DiscoverShop />
       {/* <ScrollSlider /> */}
 
       {/* <div className=" grid grid-cols-1  md:gap-5  md:grid-cols-7   w-full mt-5">
