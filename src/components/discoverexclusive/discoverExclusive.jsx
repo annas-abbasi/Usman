@@ -2,6 +2,15 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import { cn } from '@/lib/utils';
+
 
 export default function DiscoverExclusive() {
     const ItemData = [
@@ -57,15 +66,41 @@ export default function DiscoverExclusive() {
         return acc;
     }, {});
 
+    // const scrollToSection = (section) => {
+    //     refs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+    // };
+
     const scrollToSection = (section) => {
-        refs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+        const h2Element = refs[section]?.current.getElementById('thisTag');
+        // const h2Element = refs[section]?.current.querySelector('.thisTag');
+        if (h2Element) {
+            h2Element.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
         <>
             <main className='flex flex-col w-full'>
-                <div>
-                    <h3 className='text-2xl font-semibold text-gray-800'>save big!</h3>
+                <div className='flex my-6 flex-col w-full'>
+                    <Carousel
+                        opts={{
+                            align: "start",
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent className={cn("px-10 space-x-6")}>
+
+                            <CarouselItem className={cn("px-5 bg-gray-100 border-0 py-1 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-base font-semibold text-gray-800">Presenter</p>
+                                </div>
+                            </CarouselItem>
+
+
+                        </CarouselContent>
+                        <CarouselPrevious className={cn("-left-4")} />
+                        <CarouselNext className={cn("-right-4")} />
+                    </Carousel>
                 </div>
                 <section className='border-b-2 border-gray-200 pb-4'>
                     <div className='flex flex-col gap-8'>
@@ -76,7 +111,7 @@ export default function DiscoverExclusive() {
                             <p className='text-gray-900 font-semibold text-xl'>Go directly to:</p>
                             {ItemData.map((e, i) => (
                                 <div className='flex items-center gap-2' key={i}>
-                                    <p 
+                                    <p
                                         className='text-gray-800 font-semibold text-lg cursor-pointer hover:text-blue-600'
                                         onClick={() => scrollToSection(e.text)}
                                     >
@@ -99,7 +134,7 @@ export default function DiscoverExclusive() {
                 <section className='space-y-4'>
                     {ItemData.map((e, i) => (
                         <div key={i} ref={refs[e.text]} className='border-b-2 border-gray-200 mt-6'>
-                            <h2 className='text-4xl text-gray-500 font-semibold'>{e.text}</h2>
+                            <h2 className='thisTag text-4xl text-gray-500 font-semibold' id='thisTag'>{e.text} </h2>
                             <div className='grid grid-cols-3 gap-4 w-full justify-center'>
                                 {ShopData.map((item, index) => (
                                     <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
