@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import {
     Carousel,
@@ -10,7 +10,6 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { cn } from '@/lib/utils';
-
 
 export default function DiscoverExclusive() {
     const ItemData = [
@@ -61,22 +60,35 @@ export default function DiscoverExclusive() {
         { id: 14, img: '/assets/images/alcon.png', text: 'Alcon' },
     ];
 
-    const refs = ItemData.reduce((acc, value) => {
-        acc[value.text] = useRef();
-        return acc;
-    }, {});
+    const [isSticky, setIsSticky] = useState(false);
+    const sectionRef = useRef(null);
+    const stickyRef = useRef(null);
 
-    // const scrollToSection = (section) => {
-    //     refs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
-    // };
-
-    const scrollToSection = (section) => {
-        const h2Element = refs[section]?.current.getElementById('thisTag');
-        // const h2Element = refs[section]?.current.querySelector('.thisTag');
-        if (h2Element) {
-            h2Element.scrollIntoView({ behavior: 'smooth' });
+    const handleScroll = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsSticky(!entry.isIntersecting);
+            },
+            { rootMargin: "-100px 0px 0px 0px" }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
 
     return (
         <>
@@ -90,39 +102,134 @@ export default function DiscoverExclusive() {
                     >
                         <CarouselContent className={cn("px-10 space-x-6")}>
 
-                            <CarouselItem className={cn("px-5 bg-gray-100 border-0 py-1 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-base font-semibold text-gray-800">Presenter</p>
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Presents</p>
                                 </div>
                             </CarouselItem>
 
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="md:p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Free samples</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Electronics</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">TV</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Barbecues</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Shoes</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Coupons</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Smartphones & Mobile Phone</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Robot vacuum cleaner</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Cloths</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Body care</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Garden</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Jackey</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Perfumes</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Travel</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Economy</p>
+                                </div>
+                            </CarouselItem>
+
+                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-gray-800">Furniture</p>
+                                </div>
+                            </CarouselItem>
 
                         </CarouselContent>
                         <CarouselPrevious className={cn("-left-4")} />
                         <CarouselNext className={cn("-right-4")} />
                     </Carousel>
                 </div>
-                <section className='border-b-2 border-gray-200 pb-4'>
+                <section ref={sectionRef} className='border-b-2 border-gray-200 pb-4'>
                     <div className='flex flex-col gap-8'>
-                        <h3 className='text-4xl font-semibold text-gray-800 leading-[50px]'>
+                        <h3 className='text-2xl md:text-4xl font-semibold text-gray-800 leading-[50px]'>
                             Discover exclusive offers from popular brands! <br /> Shop smart, save big!
                         </h3>
-                        <div className='flex items-center gap-3 '>
+                        <div ref={stickyRef} className={`flex flex-wrap items-center gap-3 transition-all duration-150 ${isSticky ? 'fixed top-24 py-4 left-0 w-full border-b border-t border-gray-200 bg-white shadow-md z-50 px-8 transition-opacity duration-300 opacity-100' : 'opacity-1'}`}>
                             <p className='text-gray-900 font-semibold text-xl'>Go directly to:</p>
                             {ItemData.map((e, i) => (
-                                <div className='flex items-center gap-2' key={i}>
+                                <div className='flex items-center gap-2 ' key={i}>
                                     <p
-                                        className='text-gray-800 font-semibold text-lg cursor-pointer hover:text-blue-600'
-                                        onClick={() => scrollToSection(e.text)}
+                                        className='flex text-gray-800 font-semibold text-lg cursor-pointer ml-3 hover:text-blue-600'
+                                        onClick={() => handleScroll(e.text)}
                                     >
                                         {e.text}
                                     </p>
                                 </div>
                             ))}
                         </div>
-                        <div className='flex items-center gap-4'>
+                        <div className='flex flex-wrap items-center gap-4'>
                             <p className='text-gray-900 font-semibold text-xl'>Sort by:</p>
-                            <div className='flex items-center gap-6'>
+                            <div className='flex flex-wrap items-center gap-6'>
                                 <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Popularity</p>
                                 <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Alphabetical Order</p>
                                 <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Recently Added</p>
@@ -133,9 +240,9 @@ export default function DiscoverExclusive() {
 
                 <section className='space-y-4'>
                     {ItemData.map((e, i) => (
-                        <div key={i} ref={refs[e.text]} className='border-b-2 border-gray-200 mt-6'>
-                            <h2 className='thisTag text-4xl text-gray-500 font-semibold' id='thisTag'>{e.text} </h2>
-                            <div className='grid grid-cols-3 gap-4 w-full justify-center'>
+                        <div key={i} className='border-b-2 border-gray-200 mt-6'>
+                            <h2 className='thisTag text-2xl md:text-4xl text-gray-500 font-semibold' id={e.text}>{e.text} </h2>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full justify-center'>
                                 {ShopData.map((item, index) => (
                                     <div key={index} className='flex items-center flex-wrap gap-4 cursor-pointer h-24'>
                                         <Image src={item.img} width={90} height={40} objectFit='contain' alt='Image' className='fit' />
