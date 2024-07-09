@@ -273,11 +273,11 @@ export default function DiscoverExclusive() {
                     <div className='flex flex-col gap-6'>
                         <div className='space-y-4 text-center'>
                             <h3 className='text-2xl md:text-4xl font-semibold text-gray-900 leading-[50px]'>
-                                Shops
+                                Butiker
                             </h3>
-                            <p className='text-gray-500'>Discover exclusive offers from popular stores! Shop smart, save big</p>
+                            <p className='text-gray-500'>Upptäck exklusiva erbjudanden från populära butiker! Handla smart, spara stort!</p>
                         </div>
-                        <div ref={stickyRef} className={`flex flex-wrap items-center gap-3 transition-all duration-150 ${isSticky ? 'fixed top-24 py-4 left-0 w-full border-b border-t border-gray-200 bg-white shadow-md z-50 px-8 transition-opacity duration-300 opacity-100' : 'opacity-1'}`}>
+                        <div ref={stickyRef} className={`flex flex-wrap items-center gap-3 transition-all duration-150 -mt-1 ${isSticky ? 'fixed top-24 py-4 left-0 w-full border-b border-t border-gray-200 bg-white shadow-md z-50 px-8 transition-opacity duration-300 opacity-100' : 'opacity-1'}`}>
                             <p className='text-gray-900 font-semibold text-xl'>Gå direkt till:</p>
                             {ItemData.map((e, i) => (
                                 <div className='flex items-center gap-2 ' key={i}>

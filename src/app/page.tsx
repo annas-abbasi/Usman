@@ -19,8 +19,8 @@ export default function Home() {
       {/* <Responsive_profile_name /> */}
       {/* <BlogPage /> */}
       {/* <SubBlogPage /> */}
-      {/* <DiscoverShop /> */}
-      <DiscoverExclusive />
+      <DiscoverShop />
+      {/* <DiscoverExclusive /> */}
       {/* <ScrollSlider /> */}
 
       {/* <div className=" grid grid-cols-1  md:gap-5  md:grid-cols-7   w-full mt-5">
