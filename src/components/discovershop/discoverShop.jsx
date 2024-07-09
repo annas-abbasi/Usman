@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel"
 import { cn } from '@/lib/utils';
 
-export default function DiscoverShop() {
+export default function DiscoverExclusive() {
     const ItemData = [
         { id: 0, text: "0-9" },
         { id: 1, text: "A" },
@@ -100,107 +100,167 @@ export default function DiscoverShop() {
                         }}
                         className="w-full"
                     >
-                        <CarouselContent className={cn("px-10 space-x-6")}>
+                        <CarouselContent className={cn("px-10 space-x-4")}>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
-                                <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Presents</p>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div>
+                                    <p className="text-sm md:text-base font-semibold text-black">Presenter</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="md:p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Free samples</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Gratisprover</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Electronics</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Elektronik</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">TV</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">TV</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Barbecues</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Grillar</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Shoes</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Skor</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Coupons</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Kuponger</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Smartphones & Mobile Phone</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Smartphones & & Mobiltelefoner</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Robot vacuum cleaner</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Robotdammsugare</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Cloths</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Klader</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Body care</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Kroppsvard</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Garden</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Jackor</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Jackey</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Parfymer</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Perfumes</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Resor</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Travel</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Ekonomi</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Economy</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Mobler</p>
                                 </div>
                             </CarouselItem>
 
-                            <CarouselItem className={cn("px-5 flex items-center py-2 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
                                 <div className="p-1">
-                                    <p className="text-sm md:text-base font-semibold text-gray-800">Furniture</p>
+                                    <p className="text-sm md:text-base font-semibold text-black">Klockor</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Kotstillbehor</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Mat</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Heminredning</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Inredning</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Smycken</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Hotell</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Vaskor</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Utemobler</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Kreditkort</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Gym</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Privatlan</p>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className={cn("px-3 py-0 flex items-center h-10 bg-gray-100 border-0 cursor-pointer hover:bg-gray-200 transition-all duration-200 rounded-md w-fit ")}>
+                                <div className="p-1">
+                                    <p className="text-sm md:text-base font-semibold text-black">Robotgrasklippare</p>
                                 </div>
                             </CarouselItem>
 
@@ -210,15 +270,15 @@ export default function DiscoverShop() {
                     </Carousel>
                 </div>
                 <section ref={sectionRef} className='border-b-2 border-gray-200 pb-4'>
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex flex-col gap-6'>
                         <div className='space-y-4 text-center'>
-                            <h3 className='text-2xl md:text-4xl font-semibold text-gray-800 leading-[50px]'>
+                            <h3 className='text-2xl md:text-4xl font-semibold text-gray-900 leading-[50px]'>
                                 Shops
                             </h3>
                             <p className='text-gray-500'>Discover exclusive offers from popular stores! Shop smart, save big</p>
                         </div>
                         <div ref={stickyRef} className={`flex flex-wrap items-center gap-3 transition-all duration-150 ${isSticky ? 'fixed top-24 py-4 left-0 w-full border-b border-t border-gray-200 bg-white shadow-md z-50 px-8 transition-opacity duration-300 opacity-100' : 'opacity-1'}`}>
-                            <p className='text-gray-900 font-semibold text-xl'>Go directly to:</p>
+                            <p className='text-gray-900 font-semibold text-xl'>Gå direkt till:</p>
                             {ItemData.map((e, i) => (
                                 <div className='flex items-center gap-2 ' key={i}>
                                     <p
@@ -230,12 +290,12 @@ export default function DiscoverShop() {
                                 </div>
                             ))}
                         </div>
-                        <div className='flex flex-wrap items-center gap-4'>
-                            <p className='text-gray-900 font-semibold text-xl'>Sort by:</p>
+                        <div className='flex flex-wrap items-center gap-4 -mt-2 pb-2'>
+                            <p className='text-gray-900 font-semibold text-xl'>Sortera på:</p>
                             <div className='flex flex-wrap items-center gap-6'>
-                                <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Popularity</p>
-                                <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Alphabetical Order</p>
-                                <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Recently Added</p>
+                                <p className='text-gray-900 text-base cursor-pointer hover:text-blue-600'>Popularitet</p>
+                                <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Alfabetisk ordning</p>
+                                <p className='text-gray-800 text-base cursor-pointer hover:text-blue-600'>Senast tillagda</p>
                             </div>
                         </div>
                     </div>
