@@ -4,6 +4,9 @@
 import BlogPage from "@/components/blogspage/blogsPage";
 import SubBlogPage from "@/components/subBlogPage/SubBlogPage";
 import DiscoverShop from "@/components/discovershop/discoverShop";
+import OmOs from "@/components/discovershop/omOs";
+import Kontakt from "@/components/discovershop/kontakt";
+import Dealmedia from "@/components/discovershop/dealmedia";
 import dynamic from "next/dynamic";
 import DiscoverExclusive from "@/components/discoverexclusive/discoverExclusive";
 
@@ -15,11 +18,15 @@ const CustomSlider = dynamic(
 );
 export default function Home() {
   return (
-    <main className="z-0 px-4 bg-white 2xl:px-x-pad md:px-8 w-full mt-24 3xl:w-[1900px] 3xl:m-auto 3xl:mt-28">
+    // <main className="z-0 px-4 bg-white 2xl:px-x-pad md:px-8 w-full mt-24 3xl:w-[1900px] 3xl:m-auto 3xl:mt-28">
+    <main>
       {/* <Responsive_profile_name /> */}
       {/* <BlogPage /> */}
       {/* <SubBlogPage /> */}
-      <DiscoverShop />
+      {/* <DiscoverShop /> */}
+      {/* <Kontakt /> */}
+      {/* <Dealmedia /> */}
+      <OmOs />
       {/* <DiscoverExclusive /> */}
       {/* <ScrollSlider /> */}
 
