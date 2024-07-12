@@ -24,9 +24,9 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <SubBlogPage /> */}
       {/* <DiscoverShop /> */}
-      {/* <Kontakt /> */}
+      <Kontakt />
       {/* <Dealmedia /> */}
-      <OmOs />
+      {/* <OmOs /> */}
       {/* <DiscoverExclusive /> */}
       {/* <ScrollSlider /> */}
 
