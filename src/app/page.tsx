@@ -6,6 +6,7 @@ import SubBlogPage from "@/components/subBlogPage/SubBlogPage";
 import DiscoverShop from "@/components/discovershop/discoverShop";
 import OmOs from "@/components/discovershop/omOs";
 import Kontakt from "@/components/discovershop/kontakt";
+import Faq from "@/components/discovershop/faq";
 import Dealmedia from "@/components/discovershop/dealmedia";
 import dynamic from "next/dynamic";
 import DiscoverExclusive from "@/components/discoverexclusive/discoverExclusive";
@@ -24,7 +25,8 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <SubBlogPage /> */}
       {/* <DiscoverShop /> */}
-      <Kontakt />
+      {/* <Kontakt /> */}
+      <Faq />
       {/* <Dealmedia /> */}
       {/* <OmOs /> */}
       {/* <DiscoverExclusive /> */}
