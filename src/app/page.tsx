@@ -7,6 +7,7 @@ import DiscoverShop from "@/components/discovershop/discoverShop";
 import OmOs from "@/components/discovershop/omOs";
 import Kontakt from "@/components/discovershop/kontakt";
 import Faq from "@/components/discovershop/faq";
+import Integrity from "@/components/discovershop/Integrity";
 import Dealmedia from "@/components/discovershop/dealmedia";
 import dynamic from "next/dynamic";
 import DiscoverExclusive from "@/components/discoverexclusive/discoverExclusive";
@@ -26,7 +27,7 @@ export default function Home() {
       {/* <SubBlogPage /> */}
       {/* <DiscoverShop /> */}
       {/* <Kontakt /> */}
-      <Faq />
+      <Integrity />
       {/* <Dealmedia /> */}
       {/* <OmOs /> */}
       {/* <DiscoverExclusive /> */}
